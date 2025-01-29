@@ -20,6 +20,8 @@ This is a simple Python web application built using Flask and Docker. The projec
 
 ```bash
 git clone https://github.com/09atanu/my-web-app.git
+```
+```bash
 cd my-web-app
 ```
 
