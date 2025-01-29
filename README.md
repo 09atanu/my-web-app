@@ -1,4 +1,3 @@
-```markdown
 # Python Docker Application
 
 This is a simple Python web application built using Flask and Docker. The project demonstrates how to containerize a Flask app using Docker to simplify deployment and ensure consistent environments across different systems.
