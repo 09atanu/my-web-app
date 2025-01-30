@@ -1,10 +1,61 @@
-<header class="bg-dark text-white py-5">
-    <div class="container text-center">
-        <img src="{{ profile_image }}" 
-             class="rounded-circle mb-3" 
-             alt="Atanu Biswas" 
-             style="width: 200px; height: 200px; object-fit: cover;">
-        <h1>{{ name }}</h1>
-        <!-- rest of your header content -->
-    </div>
-</header>
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ name }} - Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <header class="bg-dark text-white py-5">
+        <div class="container">
+            <h1>{{ name }}</h1>
+            <p class="lead">{{ title }}</p>
+            <div class="contact-info">
+                <p>{{ contact.email }} | {{ contact.phone }} | {{ contact.location }}</p>
+                <a href="{{ contact.linkedin }}" class="text-white">LinkedIn Profile</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2>Technical Skills</h2>
+        <div class="row">
+            {% for category, items in skills.items() %}
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-header">{{ category }}</div>
+                    <ul class="list-group list-group-flush">
+                        {% for item in items %}
+                        <li class="list-group-item">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            {% for job in experience %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ job.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ job.company }} ({{ job.duration }})</h6>
+                    <ul class="list-group list-group-flush">
+                        {% for achievement in job.achievements %}
+                        <li class="list-group-item">{{ achievement }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Add more sections for Certifications, Education, etc. -->
+
+</body>
+</html>
