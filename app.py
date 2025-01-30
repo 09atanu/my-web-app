@@ -49,4 +49,8 @@ def index():
     )
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     app.run(debug=True)
+=======
+    app.run(debug=True)
+>>>>>>> 86d47d072dccc77ea6871fc5d3eeb8416ded9e5d
